@@ -1,0 +1,5 @@
+# Register bricks which can be consumed via the Mason CLI.
+# https://github.com/felangel/mason
+bricks:
+  warehouse_feature:
+    path: bricks/warehouse_feature

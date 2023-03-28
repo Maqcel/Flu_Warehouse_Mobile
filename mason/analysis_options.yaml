@@ -1,0 +1,4 @@
+# For easier brick development this will remove IDE errors
+analyzer:
+  exclude:
+    - bricks/**
