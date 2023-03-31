@@ -3,5 +3,9 @@
     "counterAppBarTitle": "Counter",
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "errorResponseNotIncluded": "No errors in response :(",
+    "@errorResponseNotIncluded": {
+        "description": "Text shown in the Snackbar if there is no message in error response"
     }
 }

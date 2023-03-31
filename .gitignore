@@ -129,3 +129,10 @@ app.*.map.json
 # Mason related
 .mason
 mason-lock.json
+
+# Generated Dart files
+**/*.g.dart
+**/*.gr.dart
+**/*.freezed.dart
+**/generated
+**/*.config.dart

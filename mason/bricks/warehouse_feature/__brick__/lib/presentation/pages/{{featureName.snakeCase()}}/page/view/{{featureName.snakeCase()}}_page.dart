@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flu_warehouse_mobile/extensions/extension_mixin.dart';
-import 'package:flu_warehouse_mobile/presentation/common_widgets/swimexpress_loading.dart';
+import 'package:flu_warehouse_mobile/presentation/common_widgets/common_loading_widget.dart';
 import 'package:flu_warehouse_mobile/presentation/pages/{{featureName.snakeCase()}}/page/cubit/{{featureName.snakeCase()}}_cubit.dart';
 import 'package:flu_warehouse_mobile/presentation/pages/{{featureName.snakeCase()}}/page/cubit/{{featureName.snakeCase()}}_state.dart';
 import 'package:flu_warehouse_mobile/presentation/pages/{{featureName.snakeCase()}}/page/view/{{featureName.snakeCase()}}_view.dart';
@@ -34,7 +34,7 @@ class {{featureName.pascalCase()}}Page extends StatelessWidget implements AutoRo
       );
 
   Widget _loadingBody() => const Scaffold(
-        body: Center(child: SwimExpressLoadingWidget(),),
+        body: Center(child: CommonLoadingWidget(),),
       );
 
   Widget _buildBody(BuildContext context) => const {{featureName.pascalCase()}}View();

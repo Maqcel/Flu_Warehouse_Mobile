@@ -2,3 +2,16 @@ include: package:very_good_analysis/analysis_options.3.1.0.yaml
 linter:
   rules:
     public_member_api_docs: false
+analyzer:
+  errors:
+    omit_local_variable_types: ignore
+    flutter_style_todos: ignore
+    one_member_abstracts: ignore
+  exclude:
+    - "**.g.dart"
+    - "**.gr.g.dart"
+    - "**.freezed.dart"
+    - "lib/injectable/get_it.config.dart"
+    - "lib/generated/**"
+    - "lib/get_it.config.dart"
+    - "lib/di/dependencies.config.dart"
