@@ -7,5 +7,25 @@
     "errorResponseNotIncluded": "No errors in response :(",
     "@errorResponseNotIncluded": {
         "description": "Text shown in the Snackbar if there is no message in error response"
+    },
+    "scannerEntryReturnHeaderText": "Put it back!",
+    "@scannerEntryReturnHeaderText": {
+        "description": "ScannerEntry Home return card header text"
+    },
+    "scannerEntryReturnBodyText": "Put item back into the shelf.\nScan the code to get started with return process",
+    "@scannerEntryReturnBodyText": {
+        "description": "ScannerEntry Home return card body text"
+    },
+    "scannerEntryGetProductHeaderText": "Take product from shelf",
+    "@scannerEntryGetProductHeaderText": {
+        "description": "ScannerEntry Home take card header text"
+    },
+    "scannerEntryGetProductBodyText": "If you want to take product from the shelf.\nScan the code to get started with takeout process",
+    "@scannerEntryGetProductBodyText": {
+        "description": "ScannerEntry Home take card body text"
+    },
+    "scannerEntryActionButtonText": "Scan Code",
+    "@scannerEntryActionButtonText": {
+        "description": "ScannerEntry Home action button text"
     }
 }

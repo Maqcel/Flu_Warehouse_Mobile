@@ -8,6 +8,7 @@ import 'package:flu_warehouse_mobile/di/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+@RoutePage()
 class {{featureName.pascalCase()}}Page extends StatelessWidget implements AutoRouteWrapper, ExtensionMixin {
   const {{featureName.pascalCase()}}Page({super.key});
 
@@ -30,7 +31,7 @@ class {{featureName.pascalCase()}}Page extends StatelessWidget implements AutoRo
   Widget _builder(BuildContext context, {{featureName.pascalCase()}}State state) => state.maybeWhen(
         loading: _loadingBody,
         loaded: (model) => _buildBody(context),
-        orElse: () => const SizedBox.shrink(),
+        orElse: () => const Scaffold(body: SizedBox.shrink()),
       );
 
   Widget _loadingBody() => const Scaffold(

@@ -6,7 +6,7 @@ class AppRouter extends $AppRouter {
   @override
   final List<AutoRoute> routes = [
     AutoRoute(
-      page: CounterRoute.page,
+      page: HomeRoute.page,
       path: '/',
     ),
   ];
