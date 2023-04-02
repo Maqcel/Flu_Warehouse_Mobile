@@ -50,4 +50,6 @@ class StandardTheme extends AppTheme {
   Color tertiaryGrey = AppStandardColors.tertiaryGrey;
   @override
   Color primaryWhite = AppStandardColors.primaryWhite;
+  @override
+  Color primaryOrange = AppStandardColors.primaryOrange;
 }

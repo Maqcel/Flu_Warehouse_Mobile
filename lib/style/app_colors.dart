@@ -22,6 +22,7 @@ abstract class AppColorsBase {
   late Color secondaryGrey;
   late Color tertiaryGrey;
   late Color primaryWhite;
+  late Color primaryOrange;
 }
 
 class AppStandardColors {
@@ -44,4 +45,5 @@ class AppStandardColors {
   static const Color secondaryGrey = Color(0xfff5f5f5);
   static const Color tertiaryGrey = Color(0xfff9f9f9);
   static const Color primaryWhite = Color(0xffffffff);
+  static const Color primaryOrange = Color(0xffFFA50F);
 }

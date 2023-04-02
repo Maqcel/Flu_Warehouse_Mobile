@@ -1,4 +1,7 @@
 import 'package:flu_warehouse_mobile/extensions/extension_mixin.dart';
+import 'package:flu_warehouse_mobile/style/app_dimensions.dart';
+import 'package:flu_warehouse_mobile/style/app_radius.dart';
+import 'package:flu_warehouse_mobile/style/app_typography.dart';
 import 'package:flutter/material.dart';
 
 class CommonButton extends StatelessWidget with ExtensionMixin {
@@ -21,16 +24,40 @@ class CommonButton extends StatelessWidget with ExtensionMixin {
   Widget build(BuildContext context) => Row(
         children: [
           Expanded(
-            child: ElevatedButton(
-              onPressed: _isEnabled ? _onPressed : null,
-              child: _content(context),
+            child: Material(
+              borderRadius: _buttonRadius(),
+              child: InkWell(
+                borderRadius: _buttonRadius(),
+                onTap: _isEnabled ? _onPressed : null,
+                child: _content(context),
+              ),
             ),
           ),
         ],
       );
 
-  Widget _content(BuildContext context) => Text(
-        _buttonText,
-        textAlign: TextAlign.center,
+  BorderRadius _buttonRadius() => BorderRadius.circular(AppRadius.m);
+
+  Widget _content(BuildContext context) => Ink(
+        decoration: BoxDecoration(
+          borderRadius: _buttonRadius(),
+          color: _isEnabled
+              ? _isMainAction
+                  ? context.getColors().primaryYellow100
+                  : context.getColors().primaryOrange
+              : context.getColors().primaryGrey,
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: AppDimensions.xm),
+          child: Text(
+            _buttonText,
+            textAlign: TextAlign.center,
+            style: AppTypography.header2.copyWith(
+              color: _isMainAction
+                  ? context.getColors().primaryBlack100
+                  : context.getColors().secondaryBlack100,
+            ),
+          ),
+        ),
       );
 }

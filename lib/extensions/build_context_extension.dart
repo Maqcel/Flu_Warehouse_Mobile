@@ -12,6 +12,15 @@ extension ContextProvider on BuildContext {
   AppTheme getColors({bool listen = true}) =>
       Provider.of<ThemeModel>(this, listen: listen).getTheme;
 
+  List<BoxShadow> getShadows() => [
+        BoxShadow(
+          color: getColors().primaryGrey.withOpacity(0.25),
+          offset: Offset(AppDimensions.zero, AppDimensions.xxs),
+          spreadRadius: AppDimensions.xxs,
+          blurRadius: AppDimensions.s,
+        ),
+      ];
+
   void showError(Failure failure) => ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
           duration: const Duration(seconds: 2),
