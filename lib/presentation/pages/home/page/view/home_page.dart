@@ -5,6 +5,7 @@ import 'package:flu_warehouse_mobile/presentation/pages/home/domain/model/action
 import 'package:flu_warehouse_mobile/presentation/pages/home/page/cubit/home_cubit.dart';
 import 'package:flu_warehouse_mobile/presentation/pages/home/page/cubit/home_state.dart';
 import 'package:flu_warehouse_mobile/presentation/pages/home/page/view/home_scanner_entry_view.dart';
+import 'package:flu_warehouse_mobile/presentation/pages/home/page/view/home_scanner_page.dart';
 import 'package:flu_warehouse_mobile/style/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,9 +29,8 @@ class HomePage extends StatelessWidget
         scannerEntry: () => HomeScannerEntryView(
           onActionButtonPressed: context.read<HomeCubit>().changeHomeScreen,
         ),
-        scanningProduct: (isReturnMode) => _emptyPlaceholder(context, state),
-        productFound: () => _emptyPlaceholder(context, state),
-        localizationEdit: (isReturnMode) => _emptyPlaceholder(context, state),
+        scanningProduct: (isReturnMode) =>
+            HomeScannerPage(isReturnMode: isReturnMode),
         orElse: () => _emptyPlaceholder(context, state),
       );
 

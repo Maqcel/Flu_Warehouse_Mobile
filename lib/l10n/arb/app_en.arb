@@ -27,5 +27,13 @@
     "scannerEntryActionButtonText": "Scan Code",
     "@scannerEntryActionButtonText": {
         "description": "ScannerEntry Home action button text"
+    },
+    "qrScannerScanningSuccess": "Item Found!",
+    "@qrScannerScanningSuccess": {
+        "description": "Qr scanner bottom text on success"
+    },
+    "qrScannerScanningProgress": "Scanning",
+    "@qrScannerScanningProgress": {
+        "description": "Qr scanner bottom text on scanning process"
     }
 }

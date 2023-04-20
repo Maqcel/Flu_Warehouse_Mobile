@@ -10,8 +10,6 @@ class HomeState with _$HomeState {
     required bool isReturnMode,
   }) = HomeStateScanningProduct;
 
-  const factory HomeState.productFound() = HomeStateProductFound;
-
   const factory HomeState.localizationEdit({
     required bool isReturnMode,
   }) = HomeStateLocalizationEdit;
