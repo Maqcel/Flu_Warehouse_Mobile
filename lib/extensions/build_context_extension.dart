@@ -1,4 +1,3 @@
-import 'package:flu_warehouse_mobile/app/networking/failure.dart';
 import 'package:flu_warehouse_mobile/l10n/l10n.dart';
 import 'package:flu_warehouse_mobile/presentation/common_widgets/common_button.dart';
 import 'package:flu_warehouse_mobile/style/app_dimensions.dart';
@@ -21,11 +20,11 @@ extension ContextProvider on BuildContext {
         ),
       ];
 
-  void showError(Failure failure) => ScaffoldMessenger.of(this).showSnackBar(
+  void showError(String? message) => ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
           duration: const Duration(seconds: 2),
           content: Text(
-            failure.message ?? l10n.errorResponseNotIncluded,
+            message ?? l10n.errorResponseNotIncluded,
             style: AppTypography.header2
                 .copyWith(color: getColors(listen: false).primaryWhite),
             overflow: TextOverflow.ellipsis,

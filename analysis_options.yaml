@@ -7,6 +7,7 @@ analyzer:
     omit_local_variable_types: ignore
     flutter_style_todos: ignore
     one_member_abstracts: ignore
+    inference_failure_on_untyped_parameter: ignore
   exclude:
     - "**.g.dart"
     - "**.gr.g.dart"

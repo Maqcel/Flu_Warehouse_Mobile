@@ -15,12 +15,6 @@ class HomeCubit extends Cubit<HomeState> {
         return emit(const HomeState.scanningProduct(isReturnMode: true));
       case ActionsEnum.scannerTake:
         return emit(const HomeState.scanningProduct(isReturnMode: false));
-      case ActionsEnum.productFound:
-        return emit(const HomeState.productFound());
-      case ActionsEnum.localizationEditReturn:
-        return emit(const HomeState.localizationEdit(isReturnMode: true));
-      case ActionsEnum.localizationEditTake:
-        return emit(const HomeState.localizationEdit(isReturnMode: false));
     }
   }
 }
