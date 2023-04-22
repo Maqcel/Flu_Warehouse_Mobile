@@ -8,10 +8,10 @@ part '{{featureName.snakeCase()}}_service_api_data_source.g.dart';
 
 @injectable
 @RestApi()
-abstract class {{featureName.pascalCase()}}ApiDataSource {
+abstract class {{featureName.pascalCase()}}ServiceApiDataSource {
   @factoryMethod
-  factory {{featureName.pascalCase()}}ApiDataSource(Dio dio) = _{{featureName.pascalCase()}}ApiDataSource;
+  factory {{featureName.pascalCase()}}ServiceApiDataSource(Dio dio) = _{{featureName.pascalCase()}}ServiceApiDataSource;
 
-  @GET(NetworkingEndpoints.)
+  @GET(NetworkingEndpoints.temporaryMason)
   Future<{{featureName.pascalCase()}}Dto> get{{featureName.pascalCase()}}();
 }

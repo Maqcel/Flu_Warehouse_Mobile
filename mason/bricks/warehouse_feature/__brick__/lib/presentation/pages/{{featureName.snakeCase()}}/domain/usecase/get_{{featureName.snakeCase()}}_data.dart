@@ -17,8 +17,8 @@ class Get{{featureName.pascalCase()}}DataUseCase {
       _{{featureName.camelCase()}}Mapper;
 
   Future<Result<{{featureName.pascalCase()}}>> call() async =>
-      (await _{{featureName.camelCase()}}Service.get{{featureName.pascalCase()}}Data()).fold(
-        (dto) => Result.success(_{{featureName.camelCase()}}Mapper(dto)),
-        Result.failure,
+      (await _{{featureName.camelCase()}}Service.get{{featureName.pascalCase()}}()).map(
+        success: (dto) => Result.success(_{{featureName.camelCase()}}Mapper(dto.value)),
+        failure: (error) => Result.failure(error.error),
       );
 }

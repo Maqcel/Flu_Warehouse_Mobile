@@ -8,10 +8,10 @@ import 'package:injectable/injectable.dart';
 @Injectable(as: {{featureName.pascalCase()}}Service)
 class {{featureName.pascalCase()}}ServiceImpl implements {{featureName.pascalCase()}}Service {
   {{featureName.pascalCase()}}ServiceImpl({
-    required {{featureName.pascalCase()}}ApiDataSource dataSource,
+    required {{featureName.pascalCase()}}ServiceApiDataSource dataSource,
   }): _dataSource = dataSource;
 
-  final {{featureName.pascalCase()}}ApiDataSource _dataSource;
+  final {{featureName.pascalCase()}}ServiceApiDataSource _dataSource;
 
   @override
   Future<Result<{{featureName.pascalCase()}}Dto>> get{{featureName.pascalCase()}}() async =>

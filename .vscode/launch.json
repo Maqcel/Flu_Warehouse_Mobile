@@ -13,7 +13,9 @@
         "--flavor",
         "development",
         "--target",
-        "lib/main_development.dart"
+        "lib/main_development.dart",
+        "--dart-define",
+        "API_URL=https://storeapp-383718.lm.r.appspot.com"
       ]
     },
     {
@@ -25,7 +27,9 @@
         "--flavor",
         "staging",
         "--target",
-        "lib/main_staging.dart"
+        "lib/main_staging.dart",
+        "--dart-define",
+        "API_URL=https://storeapp-383718.lm.r.appspot.com"
       ]
     },
     {
@@ -37,7 +41,9 @@
         "--flavor",
         "production",
         "--target",
-        "lib/main_production.dart"
+        "lib/main_production.dart",
+        "--dart-define",
+        "API_URL=https://storeapp-383718.lm.r.appspot.com"
       ]
     }
   ]

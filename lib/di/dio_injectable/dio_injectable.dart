@@ -9,8 +9,6 @@ import 'package:injectable/injectable.dart';
 @module
 abstract class DioModule {
   @singleton
-  @dev
-  @prod
   Dio dio(BaseOptions options) => Dio(options);
 }
 

@@ -42,7 +42,7 @@ class {{featureName.pascalCase()}}Page extends StatelessWidget implements AutoRo
 
   void _listener(BuildContext context, {{featureName.pascalCase()}}State state) =>
     state.maybeWhen(
-      error: (error) => context.showError(error!),
+      error: (error) => context.showError(error),
       orElse: () => null,
     );
 }

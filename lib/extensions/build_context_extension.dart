@@ -23,14 +23,16 @@ extension ContextProvider on BuildContext {
   void showError(String? message) => ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
           duration: const Duration(seconds: 2),
+          behavior: SnackBarBehavior.floating,
           content: Text(
             message ?? l10n.errorResponseNotIncluded,
-            style: AppTypography.header2
+            style: AppTypography.body1
                 .copyWith(color: getColors(listen: false).primaryWhite),
             overflow: TextOverflow.ellipsis,
             maxLines: 4,
           ),
-          backgroundColor: getColors(listen: false).secondaryBlack100,
+          backgroundColor: getColors(listen: false).primaryBlack100,
+          elevation: AppDimensions.s,
         ),
       );
 

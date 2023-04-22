@@ -13,8 +13,17 @@ class {{featureName.pascalCase()}}Cubit extends Cubit<{{featureName.pascalCase()
 
   final Get{{featureName.pascalCase()}}DataUseCase _get{{featureName.pascalCase()}}DataUseCase;
 
-  Future<void> init() async => (await _get{{featureName.pascalCase()}}DataUseCase()).fold(
-        (data) => emit({{featureName.pascalCase()}}State.loaded(model: data)),
-        (error) => emit({{featureName.pascalCase()}}State.error(error)),
+  Future<void> init() async => (await _get{{featureName.pascalCase()}}DataUseCase()).maybeWhen(
+        success: (data) => emit({{featureName.pascalCase()}}State.loaded(model: data)),
+        failure: (error) => _handleException(
+                state,
+                error.message,
+        ),
+        orElse: () => null,
       );
+
+  void _handleException({{featureName.pascalCase()}}State currentState, String? message) {
+    emit({{featureName.pascalCase()}}State.error(message));
+    emit(currentState);
+  }
 }

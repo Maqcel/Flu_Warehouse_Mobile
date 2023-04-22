@@ -1,4 +1,5 @@
 import 'package:flu_warehouse_mobile/di/dependencies.config.dart';
+import 'package:flu_warehouse_mobile/di/dio_injectable/dio_injectable.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
@@ -9,4 +10,7 @@ final getIt = GetIt.instance;
   preferRelativeImports: true, // default
   asExtension: false, // default
 )
-void configureDependencies() => $initGetIt(getIt);
+void configureDependencies() {
+  $initGetIt(getIt);
+  registerInterceptors();
+}

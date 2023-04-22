@@ -1,8 +1,16 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "loginScreenButtonText": "Login",
+    "@loginScreenButtonText": {
+        "description": "Button action text in login screen"
+    },
+    "loginScreenLoginHintText": "Insert login",
+    "@loginScreenLoginHintText": {
+        "description": "Hint text for login in login screen"
+    },
+    "loginScreenPasswordHintText": "Insert Password",
+    "@loginScreenPasswordHintText": {
+        "description": "Hint text for password in login screen"
     },
     "errorResponseNotIncluded": "No errors in response :(",
     "@errorResponseNotIncluded": {
