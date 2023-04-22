@@ -1,4 +1,3 @@
-import 'package:flu_warehouse_mobile/app/networking/failure.dart';
 import 'package:flu_warehouse_mobile/presentation/pages/{{featureName.snakeCase()}}/domain/model/{{featureName.snakeCase()}}.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -12,5 +11,5 @@ class {{featureName.pascalCase()}}State with _${{featureName.pascalCase()}}State
     required {{featureName.pascalCase()}} model,
   }) = {{featureName.pascalCase()}}StateLoaded;
 
-  const factory {{featureName.pascalCase()}}State.error([Failure? failure]) = {{featureName.pascalCase()}}StateError;
+  const factory {{featureName.pascalCase()}}State.error([String? message]) = {{featureName.pascalCase()}}StateError;
 }
