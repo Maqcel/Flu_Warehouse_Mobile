@@ -1,0 +1,4 @@
+enum EditActionEnum {
+  location,
+  project,
+}

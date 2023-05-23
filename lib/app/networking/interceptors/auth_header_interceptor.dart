@@ -13,10 +13,9 @@ class AuthHeaderInterceptor extends Interceptor {
     RequestInterceptorHandler handler,
   ) async {
     final token = await _tokenStore.getToken();
-    // TODO: Insert proper auth key
-    // if (token != null) {
-    //   options.headers[KEY] = token;
-    // }
+    if (token != null) {
+      options.headers['Authorization'] = 'Bearer $token';
+    }
 
     handler.next(options);
   }

@@ -1,3 +1,7 @@
+import 'dart:developer';
+import 'dart:io';
+import 'dart:math';
+
 import 'package:flu_warehouse_mobile/extensions/extension_mixin.dart';
 import 'package:flu_warehouse_mobile/generated/assets/assets.gen.dart';
 import 'package:flu_warehouse_mobile/l10n/l10n.dart';
@@ -8,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-class CommonQrScanner extends StatelessWidget with ExtensionMixin {
+class CommonQrScanner extends StatefulWidget with ExtensionMixin {
   const CommonQrScanner({
     super.key,
     required bool isScannedWithSuccess,
@@ -23,6 +27,24 @@ class CommonQrScanner extends StatelessWidget with ExtensionMixin {
   final void Function(BarcodeCapture) _onDetect;
 
   @override
+  State<CommonQrScanner> createState() => _CommonQrScannerState();
+}
+
+class _CommonQrScannerState extends State<CommonQrScanner> {
+  final Key qrScannerKey = GlobalKey(debugLabel: 'QR');
+  final MobileScannerController _controller = MobileScannerController();
+
+  @override
+  void reassemble() {
+    super.reassemble();
+    if (Platform.isAndroid) {
+      _controller.stop();
+    } else if (Platform.isIOS) {
+      _controller.start();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) => Expanded(
         child: Stack(
           alignment: Alignment.center,
@@ -31,7 +53,7 @@ class CommonQrScanner extends StatelessWidget with ExtensionMixin {
             DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: _scannerRadius(),
-                color: _isScannedWithSuccess
+                color: widget._isScannedWithSuccess
                     ? context.getColors().primaryYellow100
                     : context.getColors().primaryBlack100,
               ),
@@ -40,13 +62,19 @@ class CommonQrScanner extends StatelessWidget with ExtensionMixin {
               padding: EdgeInsets.all(AppDimensions.xxs),
               child: ClipRRect(
                 borderRadius: _scannerRadius(),
-                child: _successImage == null
+                child: widget._successImage == null
                     ? MobileScanner(
-                        onDetect: _isScannedWithSuccess ? (_) {} : _onDetect,
+                        controller: _controller,
+                        onDetect: widget._isScannedWithSuccess
+                            ? (_) => {}
+                            : widget._onDetect,
                       )
-                    : Image.memory(
-                        _successImage!,
-                        fit: BoxFit.cover,
+                    : Transform.rotate(
+                        angle: 90 * pi / 180,
+                        child: Image.memory(
+                          widget._successImage!,
+                          fit: BoxFit.cover,
+                        ),
                       ),
               ),
             ),
@@ -63,7 +91,7 @@ class CommonQrScanner extends StatelessWidget with ExtensionMixin {
   Widget _scannerLabel(BuildContext context) => DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: _scannerRadius(),
-          color: _isScannedWithSuccess
+          color: widget._isScannedWithSuccess
               ? context.getColors().primaryYellow100
               : context.getColors().primaryGrey,
         ),
@@ -71,12 +99,12 @@ class CommonQrScanner extends StatelessWidget with ExtensionMixin {
           padding: EdgeInsets.all(AppDimensions.xm),
           child: Row(
             children: [
-              if (_isScannedWithSuccess) ...[
+              if (widget._isScannedWithSuccess) ...[
                 Assets.icons.checkmark.svg(height: AppDimensions.m),
                 SizedBox(width: AppDimensions.xm),
               ],
               Text(
-                _successImage != null
+                widget._successImage != null
                     ? context.l10n.qrScannerScanningSuccess
                     : context.l10n.qrScannerScanningProgress,
                 style: AppTypography.body2
@@ -86,4 +114,10 @@ class CommonQrScanner extends StatelessWidget with ExtensionMixin {
           ),
         ),
       );
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 }

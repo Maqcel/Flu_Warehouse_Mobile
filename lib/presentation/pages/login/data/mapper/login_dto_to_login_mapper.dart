@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 class LoginDtoToLoginMapper {
   Login call(LoginResponseDto dto) => Login(
         token: dto.token,
+        userId: dto.userId,
         name: dto.name,
         lastName: dto.lastName,
         jobTitle: dto.jobTitle,

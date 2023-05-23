@@ -15,7 +15,7 @@
         "--target",
         "lib/main_development.dart",
         "--dart-define",
-        "API_URL=https://storeapp-383718.lm.r.appspot.com"
+        "API_URL=https://warehauseapp.herokuapp.com"
       ]
     },
     {
@@ -29,7 +29,7 @@
         "--target",
         "lib/main_staging.dart",
         "--dart-define",
-        "API_URL=https://storeapp-383718.lm.r.appspot.com"
+        "API_URL=https://warehauseapp.herokuapp.com"
       ]
     },
     {
@@ -43,7 +43,7 @@
         "--target",
         "lib/main_production.dart",
         "--dart-define",
-        "API_URL=https://storeapp-383718.lm.r.appspot.com"
+        "API_URL=https://warehauseapp.herokuapp.com"
       ]
     }
   ]

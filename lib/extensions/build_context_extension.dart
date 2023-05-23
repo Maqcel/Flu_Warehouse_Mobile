@@ -1,6 +1,7 @@
 import 'package:flu_warehouse_mobile/l10n/l10n.dart';
 import 'package:flu_warehouse_mobile/presentation/common_widgets/common_button.dart';
 import 'package:flu_warehouse_mobile/style/app_dimensions.dart';
+import 'package:flu_warehouse_mobile/style/app_duration.dart';
 import 'package:flu_warehouse_mobile/style/app_typography.dart';
 import 'package:flu_warehouse_mobile/style/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ extension ContextProvider on BuildContext {
 
   void showError(String? message) => ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
-          duration: const Duration(seconds: 2),
+          duration: AppDuration.slow,
           behavior: SnackBarBehavior.floating,
           content: Text(
             message ?? l10n.errorResponseNotIncluded,
