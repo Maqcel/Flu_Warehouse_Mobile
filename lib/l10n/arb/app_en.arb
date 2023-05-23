@@ -43,5 +43,57 @@
     "qrScannerScanningProgress": "Scanning",
     "@qrScannerScanningProgress": {
         "description": "Qr scanner bottom text on scanning process"
+    },
+    "qrScannerScannedProductIdHeaderText": "ID",
+    "@qrScannerScannedProductIdHeaderText": {
+        "description": "Scanned product table header"
+    },
+    "qrScannerScannedProductVendorHeaderText": "Vendor",
+    "@qrScannerScannedProductVendorHeaderText": {
+        "description": "Scanned product table header"
+    },
+    "qrScannerScannedProductLocationCurrentHeaderText": "Location Current",
+    "@qrScannerScannedProductLocationCurrentHeaderText": {
+        "description": "Scanned product table header"
+    },
+    "qrScannerScannedProductTakenByHeaderText": "Taken By",
+    "@qrScannerScannedProductTakenByHeaderText": {
+        "description": "Scanned product table header"
+    },
+    "qrScannerScannedProductEditLocationButtonText": "Edit Location",
+    "@qrScannerScannedProductEditLocationButtonText": {
+        "description": "Scanned product edit location action button text"
+    },
+    "qrScannerScannedProductEditProjectButtonText": "Edit Project",
+    "@qrScannerScannedProductEditProjectButtonText": {
+        "description": "Scanned product edit project action button text"
+    },
+    "qrScannerScannedProductConfirmLocationButtonText": "Confirm Location",
+    "@qrScannerScannedProductConfirmLocationButtonText": {
+        "description": "Scanned product confirm location action button text"
+    },
+    "qrScannerScannedProductConfirmProjectButtonText": "Confirm Project",
+    "@qrScannerScannedProductConfirmProjectButtonText": {
+        "description": "Scanned product confirm project action button text"
+    },
+    "qrScannerScannedProductTakeButtonText": "Take product",
+    "@qrScannerScannedProductTakeButtonText": {
+        "description": "Scanned product take action button text"
+    },
+    "editLocationCurrentHeaderText": "Current",
+    "@editLocationCurrentHeaderText": {
+        "description": "Header text for describing product current location"
+    },
+    "editLocationNewHeaderText": "New",
+    "@editLocationNewHeaderText": {
+        "description": "Header text for describing product new location"
+    },
+    "commonSuccessDialogBodyText": "Action Succeeded!",
+    "@commonSuccessDialogBodyText": {
+        "description": "Body text of common success dialog"
+    },
+    "commonSuccessDialogButtonText": "Next Scan",
+    "@commonSuccessDialogButtonText": {
+        "description": "Button text of common success dialog"
     }
 }

@@ -6,6 +6,7 @@ part 'login_response_dto.g.dart';
 class LoginResponseDto {
   LoginResponseDto({
     required this.token,
+    required this.userId,
     required this.name,
     required this.lastName,
     required this.jobTitle,
@@ -16,6 +17,8 @@ class LoginResponseDto {
       _$LoginResponseDtoFromJson(json);
 
   final String token;
+  @JsonKey(name: 'id')
+  final String userId;
   final String name;
   @JsonKey(name: 'lastname')
   final String lastName;

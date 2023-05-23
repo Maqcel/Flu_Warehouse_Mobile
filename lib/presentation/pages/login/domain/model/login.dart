@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 class Login extends Equatable {
   const Login({
     required this.token,
+    required this.userId,
     required this.name,
     required this.lastName,
     required this.jobTitle,
@@ -10,6 +11,7 @@ class Login extends Equatable {
   });
 
   final String token;
+  final String userId;
   final String name;
   final String lastName;
   final String jobTitle;
@@ -18,6 +20,7 @@ class Login extends Equatable {
   @override
   List<Object> get props => [
         token,
+        userId,
         name,
         lastName,
         jobTitle,
