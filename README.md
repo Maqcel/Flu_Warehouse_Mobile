@@ -127,5 +127,7 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 
 3. To generate newly added values use this command: `flutter gen-l10n`
 
+4. To generate code from build runner use this command: `flutter packages pub run build_runner build --delete-conflicting-outputs `
+
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
 [internationalization_link]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
